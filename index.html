@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин футбольных мячей</title>
+    <link rel="stylesheet" href="site.css">   
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="image/logo.png" alt="Логотип сайта" width="75">
+            <h1>Качественные мячи со всего мира и по выгодным ценам!</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="index.html">Главная</a>
+                <a href="katalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="btn" onclick="openModal('loginModal')">Войти</a>
+                <a href="#" class="btn" onclick="openModal('registerModal')">Зарегистрироваться</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>О нашем магазине</h2>
+            <p>Добро пожаловать в наш интернет-магазин футбольных мячей! Мы предлагаем качественные мячи от популярных производителей. У нас вы найдете мячи от Adidas, Nike, Puma и других.</p>
+        </section>
+
+        <section class="products">
+            <h2>Популярные товары</h2>
+            <div class="product">
+                <div class="product-info">
+                    <h3>Adidas Champions League</h3>
+                    <p>Цена: 18 999 ₽</p>
+                    <p>Описание: Футбольный мяч рекомендован для проведения официальных соревнований высшего уровня, для профессиональных команд и клубов.</p>
+                </div>
+                <div class="product-image">
+                    <img src="image/ball1.jpg" alt="Мяч Adidas" width="300">
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <h3>Nike Premier League</h3>
+                    <p>Цена: 12 490 ₽</p>
+                    <p>Описание: Мяч обладает высококонтрастной графикой, позволяющей его быстрее отслеживать и быстрее реагировать на его движения. Соответствует FIFA Quality PRO.</p>
+                </div>
+                <div class="product-image">
+                    <img src="image/ball2.jpg" alt="Мяч Nike" width="300">
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <h3>Puma La Liga</h3>
+                    <p>Цена: 9 490 ₽</p>
+                    <p>Описание: Высококачественный игровой мяч с высокими эксплуатационными характеристиками для всех видов профессионального футбола.</p>
+                </div>
+                <div class="product-image">
+                    <img src="image/ball3.jpg" alt="Мяч Puma" width="300">
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <h3>Select Numero 10</h3>
+                    <p>Цена: 7 990 ₽</p>
+                    <p>Описание: Мяч Numero 10 получил свое название благодаря номеру футболки звездного вратаря сборной Дании.</p>
+                </div>
+                <div class="product-image">
+                    <img src="image/ball4.jpg" alt="Мяч Select" width="300">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="katalog.html">Каталог</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Качественные футбольные мячи. Все права защищены.</p>
+        <p>Контактный email: info@footballshop.com | Телефон: +7 (900) 123-45-67</p>
+        <p>Мы в соцсетях: <a href="#">ВКонтакте</a> | <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h4>Вход</h4>
+            <form action="/login" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h4>Регистрация</h4>
+            <form action="/register" method="POST">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <input type="password" name="confirm_password" placeholder="Подтвердите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
